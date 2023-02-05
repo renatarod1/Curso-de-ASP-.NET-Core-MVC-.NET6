@@ -6,8 +6,7 @@ namespace LanchesMac.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index() {
-            TempData["Nome"] = "Macoratti";
+        public IActionResult Index() {            
             return View();
         }
         
