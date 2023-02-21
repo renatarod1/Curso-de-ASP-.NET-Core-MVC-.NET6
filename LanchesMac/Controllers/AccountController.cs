@@ -47,7 +47,7 @@ namespace LanchesMac.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(LoginViewModel registroVM) {
-            if (!ModelState.IsValid) {
+            if (ModelState.IsValid) {
                 var user = new IdentityUser { UserName = registroVM.UserName };
                 var result = await _userManager.CreateAsync(user, registroVM.Password);
 
