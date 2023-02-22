@@ -18,7 +18,7 @@ public class Startup
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services) {
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-        
+
         services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
         services.Configure<IdentityOptions>(options => {
@@ -38,7 +38,7 @@ public class Startup
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
-        services.AddControllersWithViews();   
+        services.AddControllersWithViews();
         services.AddMemoryCache();
         services.AddSession();
     }
@@ -54,7 +54,7 @@ public class Startup
             app.UseHsts();
         }
         app.UseHttpsRedirection();
-        
+
         app.UseStaticFiles();
         app.UseRouting();
 
@@ -63,8 +63,11 @@ public class Startup
         app.UseAuthentication();
         app.UseAuthorization();
 
-        app.UseEndpoints(endpoints =>
-        {
+        app.UseEndpoints(endpoints => {
+            endpoints.MapControllerRoute(
+              name: "areas",
+              pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
             endpoints.MapControllerRoute(
               name: "categoriaFiltro",
               pattern: "Lanche/{action}/{categoria?}",
