@@ -7,21 +7,26 @@
 <h3>Pedidos</h3>
 
 <form method="get" class="form-inline">
-    <input name="filter" class="form-control" placeholder="filtro" value="@Model.RouteValue["Filter"]" />
-    <button type="submit" class="btn btn-info">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>Procurar
-    </button>
+    <table class="table table-responsive-md">
+        <tr>
+            <td class="col-9">
+                <input name="filter" class="form-control" placeholder="filtro" value="@Model.RouteValue["Filter"]" />
+            </td>
+            <td class="col-3">
+                <button type="submit" class="btn btn-primary">Procurar</button>
+            </td>
+        </tr>
+    </table>
 </form>
 
 Total de Pedidos : @Model.TotalRecordCount
 <div>
     <vc:pager paging-list="@Model"></vc:pager>
 </div>
-
-<p>
+@*<p>
     <a asp-action="Create">Criar novo Pedido</a>
-</p>
-<table class="table">
+</p>*@
+<table class="table table table-light">
     <thead>
         <tr>
             <th>
@@ -33,9 +38,9 @@ Total de Pedidos : @Model.TotalRecordCount
             <th>
                 @Html.DisplayNameFor(model => model.Endereco1)
             </th>
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.Endereco2)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Cep)
             </th>
@@ -72,9 +77,9 @@ Total de Pedidos : @Model.TotalRecordCount
             <td>
                 @Html.DisplayFor(modelItem => item.Endereco1)
             </td>
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.Endereco2)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Cep)
             </td>
@@ -96,10 +101,10 @@ Total de Pedidos : @Model.TotalRecordCount
             <td>
                 @Html.DisplayFor(modelItem => item.PedidoEntregueEm)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PedidoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.PedidoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.PedidoId">Deletar</a>
+            <td class="col-md-3">
+                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.PedidoId">Editar</a>
+                <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.PedidoId">Detalhes</a>
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.PedidoId">Deletar</a>
             </td>
         </tr>
 }
