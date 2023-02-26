@@ -101,10 +101,11 @@ Total de Pedidos : @Model.TotalRecordCount
             <td>
                 @Html.DisplayFor(modelItem => item.PedidoEntregueEm)
             </td>
-            <td class="col-md-3">
+            <td class="col-md-4">
                 <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.PedidoId">Editar</a>
                 <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.PedidoId">Detalhes</a>
                 <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.PedidoId">Deletar</a>
+                    <a asp-action="PedidoLanches" class="btn btn-outline-primary" asp-route-id="@item.PedidoId">Ver Itens</a>
             </td>
         </tr>
 }
