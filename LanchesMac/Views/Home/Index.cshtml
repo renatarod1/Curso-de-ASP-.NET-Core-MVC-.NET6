@@ -1,15 +1,5 @@
-﻿@*@model HomeViewModel
-
-<partial name="_Carousel"/>
-
-<h2>Os preferidos da semana</h2>
-<h4>Tá com fome ???</h4>
-
-<div class="row">
-    @foreach (var lanche in Model.LanchesPreferidos) {
-        <partial name="_lanchesResumo" for="@lanche"/>
-    }
-</div>*@
+﻿@*@model HomeViewModel*@
+@*<partial name="_Carousel" />*@
 
 <div class="row text-center">
     <h2>Lanches</h2>
@@ -43,26 +33,12 @@
     <section id="portifolio">
         @await Html.PartialAsync("_IndexPartial")
     </section>
-    <br />
-    <section id="contato">
-        <div class="row">
-            <div class="col-10 col-md-5 col-lg-5 offset-1" style="color:black">
-                <h4>&copy; 2023 - LanchesMac</h4>
-                <p class="text-justify">
-                    Aqui você encontra aquele lanche gostoso que da água na boca.
-                    Aquela sobremesa saborosa e para acompanhar a sua bebida preferida.
-                    E se você é vegetariano também vai encontrar o lanche, sobremesa e bebida do seu gosto.
-                </p>
-            </div>
-
-            <div class="col-10 col-md-5 col-lg-5 offset-1" style="color:black">
-                <h4>Tem alguma dúvida ?</h4>
-                <p class="list-unstyled">
-                    <li class="py-1" style="list-style: none;">Av. Bueno de Andrade, 56 Setor-2 Quadra-7</li>
-                    <li class="py-1" style="list-style: none;">+55 999 9123 502</li>
-                    <li class="py-1" style="list-style: none;"><a href="lanchesmac@hotmail.com" style="color:blue">lanchesmac@hotmail.com</a></li>
-                </p>
-            </div>
-        </div>
-    </section>
+    <br /><br />
+    <h2 class="text-center">Os preferidos da semana</h2>
+    <h4 class="text-center">Tá com fome ???</h4>
+    <div class="row justify-content-center">
+        @foreach (var lanche in Model.LanchesPreferidos) {
+            <partial name="_lanchesResumo" for="@lanche" />
+        }
+    </div>
 </div>
