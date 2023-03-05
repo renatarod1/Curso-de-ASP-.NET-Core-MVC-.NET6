@@ -24,10 +24,14 @@ Total de Pedidos : @Model.TotalRecordCount
     <vc:pager paging-list="@Model"></vc:pager>
 </div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Criar Produto</a> | 
-    <a asp-controller="AdminLanchesReport" asp-action="LanchesCategoriaReport" class="btn btn-primary">Gerar Relatório</a>
-</p>
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="Create" class="btn btn-primary">Criar Produto</a> |
+        <a asp-controller="AdminLanchesReport" asp-action="LanchesCategoriaReport" class="btn btn-primary">Gerar Relatório</a> |
+        <a asp-controller="AdminLanchesReport" asp-action="LanchesCategoriaPDF" class="btn btn-primary">Gerar PDF</a>
+    </div>
+</div>
+<br />
 <div class="row">
     <div>
         <table class="table table-light">
@@ -38,10 +42,10 @@ Total de Pedidos : @Model.TotalRecordCount
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.DescricaoCurta)
-                    </th>                   
+                    </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Preco)
-                    </th>                   
+                    </th>
                     <th>
                         @Html.DisplayNameFor(model => model.IsLanchePreferido)
                     </th>
@@ -62,10 +66,10 @@ Total de Pedidos : @Model.TotalRecordCount
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.DescricaoCurta)
-                        </td>                       
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Preco)
-                        </td>                       
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.IsLanchePreferido)
                         </td>

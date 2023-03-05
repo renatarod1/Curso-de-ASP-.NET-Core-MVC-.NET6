@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="03/05/2023 13:42:48" ReportInfo.Modified="03/05/2023 15:28:35" ReportInfo.CreatorVersion="2023.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/05/2023 13:42:48" ReportInfo.Modified="03/05/2023 19:26:24" ReportInfo.CreatorVersion="2023.1.0.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq7GmIKMvjgSLjJgfLlJFLxePC+nB8+zfmXoVhazUlYV47tOjNqd71o/E42BnHpZFkZQmN2b4+vYkJFJpUtX9GamwAhEd4XIMABDpKTt1QsE46W2XH2WklgFEosjVrMClvpaxtMtz2LmuULkOaEOcBP/cCgS5NUxX2QMoqvuFGCxopUvaGsOdyPVYcR1ho2/oRzEodx8fYP7Ycv6DgN0ZAUA==">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq7GmIKMvjgSLjJgfLlJFLxePC+nB8+zfmXoVhazUlYV47tOjNqd71o/E42BnHpZFkZQmN2b4+vYkJFJpUtX9GamwAhEd4XIMABDpKTt1QsE46W2XH2WklgFEosjVrMClvpaxtMtz2LmuULkOaEOcBP/cCgS5NUxX2QMoqvuFGCxopUvaGsOdyPVYcR1ho2/oR+VfrFTxrKs+Pyb5KXoboBQ==">
       <TableDataSource Name="Categorias" DataType="System.Int32" Enabled="true" TableName="Categorias">
         <Column Name="CategoriaId" DataType="System.Int32"/>
         <Column Name="CategoriaNome" DataType="System.String"/>
@@ -23,10 +23,10 @@
     <Relation Name="Categorias_Lanches" ParentDataSource="Categorias" ChildDataSource="Lanches" ParentColumns="CategoriaId" ChildColumns="CategoriaId" Enabled="true"/>
   </Dictionary>
   <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
-    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
-      <TextObject Name="Text9" Left="236.25" Top="9.45" Width="207.9" Height="28.35" Text="Lanches por Categoria" Font="Arial, 12pt, style=Bold"/>
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8" Fill.Color="MistyRose">
+      <TextObject Name="Text9" Left="9.45" Top="9.45" Width="689.85" Height="28.35" Text="Lanches por Categoria" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
     </ReportTitleBand>
-    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="47.25" Fill.Color="PaleTurquoise" StartNewPage="true" DataSource="Categorias">
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="47.25" Fill.Color="MediumTurquoise" StartNewPage="true" DataSource="Categorias">
       <TextObject Name="Text1" Left="9.45" Top="9.45" Width="151.2" Height="18.9" Text="[Categorias.CategoriaNome]" Font="Arial, 12pt, style=Bold"/>
       <TextObject Name="Text3" Left="236.25" Top="9.45" Width="463.05" Height="18.9" Text="[Categorias.Descricao]" Font="Arial, 10pt"/>
       <DataBand Name="Data2" Top="144.3" Width="718.2" Height="85.05" DataSource="Lanches">
@@ -35,9 +35,9 @@
         <TextObject Name="Text7" Left="434.7" Top="9.45" Width="122.85" Height="28.35" Text="[Lanches.Preco]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
         <PictureObject Name="Picture1" Left="585.9" Top="9.45" Width="113.4" Height="75.6" DataColumn="Lanches.ImagemUrl"/>
         <DataHeaderBand Name="DataHeader1" Top="93.05" Width="718.2" Height="47.25" Fill.Color="WhiteSmoke">
-          <TextObject Name="Text2" Left="9.45" Width="94.5" Height="18.9" Fill.Color="WhiteSmoke" Text="Nome" Font="Arial, 10pt"/>
-          <TextObject Name="Text6" Left="236.25" Width="189" Height="37.8" Fill.Color="WhiteSmoke" Text="DescricaoCurta" Font="Arial, 10pt"/>
-          <TextObject Name="Text8" Left="453.6" Width="103.95" Height="18.9" Fill.Color="WhiteSmoke" Text="Preco" Font="Arial, 10pt"/>
+          <TextObject Name="Text2" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Fill.Color="WhiteSmoke" Text="Nome:" Font="Arial, 10pt, style=Bold"/>
+          <TextObject Name="Text6" Left="236.25" Top="9.45" Width="189" Height="37.8" Fill.Color="WhiteSmoke" Text="Descricao Curta:" Font="Arial, 10pt, style=Bold"/>
+          <TextObject Name="Text8" Left="453.6" Top="9.45" Width="103.95" Height="18.9" Fill.Color="WhiteSmoke" Text="           Preço:" Font="Arial, 10pt, style=Bold"/>
         </DataHeaderBand>
       </DataBand>
     </DataBand>
